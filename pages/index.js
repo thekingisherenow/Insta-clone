@@ -12,6 +12,7 @@ export default function Home() {
     <div >
       <Head>
         <title> Instagram 2.0</title> 
+        <link rel ="shortcut icon" href="/favicon.png"/>
         </Head>
         
         <Header />

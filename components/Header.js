@@ -54,14 +54,14 @@ function Header() {
         <div >
           <div className='flex items-center justify-end space-x-2 mt-3'>
             <HomeIcon 
-            className='navBtn ' 
+            className='navBtn hiddenBtns ' 
             onClick={()=> router.push("/")}/>
-            <Bars3Icon className='h-8 cursor-pointer flex-shrink-0' />
+            
 
             {session? (
               <>
                 <div className='relative navBtn'>
-                <HeartIcon className='navBtn' />
+                <HeartIcon className='navBtn ' />
                 <div className='absolute -top-2 -right-1 w-5 h-5 flex items-center justify-center
                  bg-red-500 rounded-full animate-pulse text-white
                  '>3</div>
@@ -69,7 +69,7 @@ function Header() {
               
               
               <PlusCircleIcon onClick={()=>setOpen(true)}
-              className='navBtn hiddenBtns' />
+              className='navBtn ' />
   
               <img onClick={signOut}
               src={session?.user?.image}
@@ -83,13 +83,9 @@ function Header() {
               className="font-semibold text-sm text-center" >Sign in</button>
             )
             }
-
             
           </div>
         </div>
-
-
-        
       </div >
     </div>
   )
