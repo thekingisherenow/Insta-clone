@@ -15,7 +15,7 @@ function Suggestions() {
                 id: i,
                 avatar: faker.image.avatar(),
                 userName: faker.internet.userName(),
-                company : faker.company.companyName()
+                company : faker.company.name()
 
             }
         ))
