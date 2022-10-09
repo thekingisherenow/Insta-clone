@@ -21,20 +21,21 @@ function Header() {
         {/* // left */}
         <div 
         onClick={()=> router.push("/")}
-        className='relative hidden lg:inline-block   w-28 h-16 cursor-pointer'>
+        className='relative  w-28 h-16 cursor-pointer'>
           <Image
             src="https://links.papareact.com/ocw"
             layout='fill' objectFit='contain' />
         </div>
-        <div onClick={()=> router.push("/")}
-         className='relative flex-shrink-0 my-4 lg:hidden w-10 h-10 cursor-pointer'>
+        {/* <div onClick={()=> router.push("/")}
+         className='relative flex-shrink-0 my-4 
+          w-10 h-10 cursor-pointer'>
           <Image
             src="https://links.papareact.com/jjm"
             layout='fill' objectFit='contain' />
-        </div>
+        </div> */}
 
          {/* // middle - Search Input Field */}
-        <div >
+        <div className='hidden lg:inline-block'>
 
           <div className='relative mt-1 p-2 rounded-md flex-shrink-1 ' >
             <div className='absolute inset-y-0 pl-3 flex items-center 
@@ -54,7 +55,7 @@ function Header() {
         <div >
           <div className='flex items-center justify-end space-x-2 mt-3'>
             <HomeIcon 
-            className='navBtn hiddenBtns ' 
+            className='navBtn ' 
             onClick={()=> router.push("/")}/>
             
 

@@ -9,7 +9,7 @@ import {  useSession } from 'next-auth/react';
 import { ref ,getDownloadURL ,uploadString } from "firebase/storage";
 
 function Modal() {
-  const { data:session } = useSession();
+  const { data:session } = useSession(); 
 
   const [open, setOpen] = useRecoilState(modalState)
   const filePickerRef = useRef(null);
@@ -38,7 +38,7 @@ function Modal() {
       //4. get a download url from firebase storage and update the original post with image. 
 
       const docRef = await addDoc(collection(db,'posts'),{
-        username : session.user.name,
+        username : session.user.username,
         caption : captionRef.current.value,
         profileImg : session.user.image,
         timestamp : serverTimestamp()
@@ -80,7 +80,8 @@ function Modal() {
         className='fixed z-10 inset-0 overflow-y-auto'
         onClose={closeModel}>
 
-        <div className="flex px-4 sm:block text-center  min-h-[800px] sm:min-h-screen pt-4 pb-20  sm:p-0">
+        <div className="flex px-4 sm:block text-center
+          min-h-[800px] sm:min-h-screen pt-4 pb-20  sm:p-0">
 
         <Transition.Child
             as={Fragment}
@@ -119,13 +120,16 @@ function Modal() {
                      className="h-8 cursor-pointer  " 
                     />
                       {loading? (
-                        <h1 className=" mx-auto font-bold flex justify-center">Uploading
+                        <h1 className=" mx-auto font-bold flex 
+                        justify-center">Uploading
                         </h1>) : (
-                          <h1 className=" mx-auto font-bold flex justify-center" >Create new Post </h1> ) }
+                          <h1 className=" mx-auto font-bold flex 
+                          justify-center" >Create new Post </h1> ) }
                     
                     
                     <button className="flex justify-end font-semibold 
-                    cursor-pointer disabled:bg-gray-300 hover:text-blue-700 disabled:cursor-not-allowed
+                    cursor-pointer disabled:bg-gray-300 hover:text-blue-700
+                     disabled:cursor-not-allowed
                     text-blue-400"
                     onClick={uploadPost}
                     disabled= {!selectedFile } 
