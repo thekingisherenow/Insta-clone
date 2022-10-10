@@ -84,7 +84,7 @@ function Post({id,userName,userImg,img,caption}) {
 
         </div>
         {/* Image  */}
-            <img src ={img} className="w-full items-contain
+            <img src ={img} className="w-3/4 items-contain h-[500px] object-cover
              flex justify-end items-center"/>
 
         {/* Buttons */}
@@ -118,11 +118,24 @@ function Post({id,userName,userImg,img,caption}) {
 
         {/* Likes && Captions  */}
         <div className='p-1 mt-3 ml-4 truncate'>
+                
+                <div className='flex font-bold mb-2'>
+
                  {likes.length>0 && (
-            <p className='font-bold mb-2 '>{likes.length} {(likes.length =1)? ("like"):
-                ("likes")} </p>
+                     <>
+            <span className='mr-2'>{likes.length} </span>
       
-        )}
+             <p> 
+                {(likes.length ==1)? ( 
+                    <span> like </span>):
+                    (<span>likes</span>)} 
+                    
+                </p>
+                    
+                    </>
+      
+      )}
+      </div>
 
             <span className='font-bold  mr-1'>{userName}</span>
             <span>{caption}</span>

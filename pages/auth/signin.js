@@ -7,7 +7,7 @@ function signIn({ providers }) {
   return (
     <> 
         <Head>
-        <title> Login 🞄 Instagramv2</title> 
+        <title> Login </title> 
         <link rel ="shortcut icon" href="/favicon.png"/>
         </Head>
       <div className="flex flex-col border bg-white items-center justify-center mt-10 max-w-md mx-auto
@@ -16,7 +16,7 @@ function signIn({ providers }) {
         <img className="w-44 mt-6 object-contain "
         src= "https://links.papareact.com/ocw"/>
 
-<div className="relative my-4">
+{/* <div className="relative my-4">
     <input type="text" id="email" className="block px-2.5 pb-2.5 pt-4 w-80 text-sm
      text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none
       dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none 
@@ -44,7 +44,8 @@ function signIn({ providers }) {
     text-center justify-center text-sm font-semibold
     " > Log In </button>
 
-      <h1> OR</h1>
+      <h1> OR</h1> */}
+      <p> This is a clone page created just for eductaional purpose. </p>
         <div className="mt-40 flex ">
           <img className="w-10"
           src= "https://iili.io/LTkYwN.png"/> 

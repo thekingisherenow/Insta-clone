@@ -105,16 +105,17 @@ function Modal() {
             leaveTo="opacity-0 scale-95"
           >
             <div >
-                    {/* //yaha inline block chodeko chu.tala hunu parne ho.  */}
-              <Dialog.Panel className="inline-block  h-[600px] md:w-auto transform overflow-hidden 
-                rounded-2xl bg-white p-6 align-middle shadow-xl transition-all mt-20">
+              <Dialog.Panel className=" inline-block
+              ml-16 w-72 sm:w-1/2  h-[400px]  sm:h-[500px] 
+               transform overflow-hidden 
+                rounded-2xl bg-white p-6 align-middle shadow-xl transition-all mt-28">
                 
 
                 <div>
 
                   {selectedFile? (
                     <>
-                    <div className=" flex border-b-2   w-full ">
+                    <div className=" flex border-b-2   ">
 
                     <ArrowLeftIcon onClick={removepicture}
                      className="h-8 cursor-pointer  " 
@@ -124,7 +125,7 @@ function Modal() {
                         justify-center">Uploading
                         </h1>) : (
                           <h1 className=" mx-auto font-bold flex 
-                          justify-center" >Create new Post </h1> ) }
+                          justify-center items-center " >Create new Post </h1> ) }
                     
                     
                     <button className="flex justify-end font-semibold 
@@ -155,17 +156,11 @@ function Modal() {
                     </>
 
                   ):(
-
-                    <>
-                    <h1 className="border-b-2 mb w-[800px] flex font-bold justify-center
+                      
+                    <div  >
+                    <h1 className="border-b-2 flex font-bold justify-center
                    items-center ">Create new Post.</h1>
-               
-               
-                     <div>
-                  {/* nabujheko bhag yaha cha hai// yo tala ko filepickerref.current.click() wala portion */}
-                  
-                </div>
-                    <div className=" flex flex-col justify-center items-center">
+                    <div className=" flex mt-20 flex-col justify-center items-center">
                     <img className="h-20 "
                       src="https://iili.io/L3aWan.png" alt="insta upload image" />
                     <h1 className="text-2xl">Drag photoes and videos here. </h1>
@@ -181,7 +176,8 @@ function Modal() {
                    >Select from Computer</button>
                   </div>
                     
-                    </>
+                    </div>
+          
                   )}
                   
                 </div>
