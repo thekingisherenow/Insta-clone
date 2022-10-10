@@ -4,13 +4,14 @@ import { EllipsisHorizontalIcon,HeartIcon,ChatBubbleOvalLeftIcon,
     import { HeartIcon as SolidHeart} from '@heroicons/react/24/solid';
 import { addDoc, collection, deleteDoc, doc, onSnapshot, orderBy, query, serverTimestamp, setDoc } from 'firebase/firestore';
 import { useSession } from 'next-auth/react';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Moment from 'react-moment';
 import { db } from '../firebase';
 
 function Post({id,userName,userImg,img,caption}) {
 
     const {data:session} = useSession()
+    const commentRef = useRef(null)
 
     const [posts,setPosts] = useState([]);
     const [comment, setComment] = useState("")
@@ -105,7 +106,8 @@ function Post({id,userName,userImg,img,caption}) {
             }
            
             
-            <ChatBubbleOvalLeftIcon className='btn'/>
+            <ChatBubbleOvalLeftIcon onClick={()=>commentRef.current.focus()}
+            className='btn'/>
             <PaperAirplaneIcon className='btn -rotate-45'/>
             </div>
             <BookmarkIcon className='btn' />
@@ -152,7 +154,7 @@ function Post({id,userName,userImg,img,caption}) {
         {session && (
             <form className='flex items-center p-4'>
             <FaceSmileIcon className='h-8 cursor-pointer'/>
-            <input 
+            <input ref={commentRef}
                 value={comment}
                 onChange= {e=>setComment(e.target.value)}
             className='border-none flex-1 focus:ring-0 
