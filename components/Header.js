@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { MagnifyingGlassIcon, HomeIcon, HeartIcon, PlusCircleIcon, Bars3Icon } from '@heroicons/react/24/outline';
 import { signIn, signOut, useSession } from 'next-auth/react';
-import { useRouter } from 'next/router';
+import { Router, useRouter } from 'next/router';
 import { modalState } from '../atoms/modalAtom';
 import { useRecoilState } from 'recoil';
 
@@ -62,7 +62,8 @@ function Header() {
             {session? (
               <>
                 <div className='relative navBtn'>
-                <HeartIcon className='navBtn ' />
+                <HeartIcon 
+                className='navBtn ' />
                 <div className='absolute -top-2 -right-1 w-5 h-5 flex items-center justify-center
                  bg-red-500 rounded-full animate-pulse text-white
                  '>3</div>
