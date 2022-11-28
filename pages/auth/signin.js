@@ -46,7 +46,7 @@ function signIn({ providers }) {
 
       <h1> OR</h1>  */}
 
-      <p> This is a clone site created just for educational purpose.
+      <p> This is a clone site created just for educational purposes. 
           </p>
         
         <div className="my-40 flex flex-col space-y-10  ">
