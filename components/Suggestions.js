@@ -38,7 +38,7 @@ function Suggestions() {
             suggestions.map((profile)=>(
                 <div key={profile.id}
                 className="flex items-center justify-between mt-3">
-                    <img 
+                    <img alt = ""
                     src= {profile.avatar}
                     className= "h-10 w-10 border p-[2px] image-contain rounded-full" />
                     <div className="flex-1 ml-3"> 
