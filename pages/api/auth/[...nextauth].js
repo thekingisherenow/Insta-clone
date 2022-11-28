@@ -1,18 +1,23 @@
 import NextAuth from "next-auth"
 import GithubProvider from "next-auth/providers/github"
 import FacebookProvider from "next-auth/providers/facebook";
+import GoogleProvider from "next-auth/providers/google";
 
 
 export const authOptions = {
   // Configure one or more authentication providers
   providers: [
-    // GithubProvider({
-    //   clientId: process.env.GITHUB_ID,
-    //   clientSecret: process.env.GITHUB_SECRET,
-    // }),
+   
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      image:"https://iili.io/HK6Iy7V.jpg"
+    }),
+    
     FacebookProvider({
       clientId: process.env.FACEBOOK_CLIENT_ID,
-      clientSecret: process.env.FACEBOOK_CLIENT_SECRET
+      clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
+      image:"https://iili.io/LTkYwN.png"
     })
   ],
   secret: process.env.NEXTAUTH_SECRET,

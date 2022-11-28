@@ -2,7 +2,7 @@ import { async } from '@firebase/util';
 import { EllipsisHorizontalIcon,HeartIcon,ChatBubbleOvalLeftIcon,
     PaperAirplaneIcon,BookmarkIcon,FaceSmileIcon} from '@heroicons/react/24/outline';
     import { HeartIcon as SolidHeart} from '@heroicons/react/24/solid';
-import { addDoc, collection, deleteDoc, doc, onSnapshot, orderBy, query, serverTimestamp, setDoc } from 'firebase/firestore';
+import { addDoc, collection, collectionGroup, deleteDoc, doc, onSnapshot, orderBy, query, serverTimestamp, setDoc } from 'firebase/firestore';
 import { useSession } from 'next-auth/react';
 import { useEffect, useRef, useState } from 'react';
 import Moment from 'react-moment';
@@ -73,7 +73,7 @@ function Post({id,userName,userImg,img,caption}) {
         {/* Header */}
         <div className='flex p-5 items-center '>
             
-            <img className='h-12 w-12 object-cover rounded-full 
+            <img className='h-12 w-12 object-cover rounded-full object-center
             border p-1 mr-3 cursor-pointer'
             src= {userImg} />
             <div className='flex-1'>
@@ -84,7 +84,7 @@ function Post({id,userName,userImg,img,caption}) {
 
         </div>
         {/* Image  */}
-            <img src ={img} className="w-3/4 items-contain h-[500px] object-cover
+            <img src ={img} className="w-full items-contain h-[500px] object-cover 
              flex justify-end items-center"/>
 
         {/* Buttons */}

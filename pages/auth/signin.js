@@ -3,7 +3,7 @@ import Head from "next/head";
 import Header from "../../components/Header";
 
 function signIn({ providers }) {
-
+  const imageList=["https://pngimg.com/uploads/google/google_PNG19635.png","https://iili.io/LTkYwN.png"]
   return (
     <> 
         <Head>
@@ -44,15 +44,22 @@ function signIn({ providers }) {
     text-center justify-center text-sm font-semibold
     " > Log In </button>
 
-      <h1> OR</h1> */}
-      <p> This is a clone page created just for eductaional purpose. </p>
-        <div className="mt-40 flex ">
-          <img className="w-10"
-          src= "https://iili.io/LTkYwN.png"/> 
-          {Object.values(providers).map((provider) => (
-            <div key={provider.name}>
-              <button className=" "
-                onClick={() => SignIntoProvider(provider.id,{callbackUrl : '/' })}>
+      <h1> OR</h1>  */}
+
+      <p> This is a clone site created just for educational purpose.
+          </p>
+        
+        <div className="my-40 flex flex-col space-y-10  ">
+          
+          {Object.values(providers).map((provider,i) => (
+
+            <div key={provider.name} 
+             onClick={() => SignIntoProvider(provider.id,{callbackUrl : '/' })}
+            className= "flex border-solid border py-2 px-5 border-gray-200 hover:bg-gray-300 ">
+              {/* <h1>{provider.name}</h1> */}
+              <img className="h-10 w-10 object-contain"
+              src= {imageList[i]} />
+              <button className=" " >
                 Sign in with {provider.name}
               </button>
             </div>)
